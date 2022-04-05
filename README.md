@@ -1,2 +1,2 @@
-# DSI-mod-PR08
-Modificación Practica 08 DSI
+# DSI-mod-pr8
+Modificación DSI
