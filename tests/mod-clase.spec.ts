@@ -8,8 +8,7 @@ import {Suscriptor} from '../src/suscriptor/suscriptor';
 describe('Mod Clase tests', () => {
     const revistaABC = new Revista('ABC');
     const suscriptor1 = new Suscriptor();
-    
-    //revistaABC.nuevoNumero();
+
     describe('Revista class tests', () => {
         it('getName method', () => {
             expect(revistaABC.getName()).to.be.eql('ABC');
