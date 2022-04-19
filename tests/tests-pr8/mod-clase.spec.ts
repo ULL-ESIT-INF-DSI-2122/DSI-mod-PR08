@@ -1,8 +1,8 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Observable, Observer} from '../src/observable/observable';
-import {Revista} from '../src/revista/revista';
-import {Suscriptor} from '../src/suscriptor/suscriptor';
+import {Observable, Observer} from '../../src/mod-pr-8/observable/observable';
+import {Revista} from '../../src/mod-pr-8/revista/revista';
+import {Suscriptor} from '../../src/mod-pr-8/suscriptor/suscriptor';
 
 
 describe('Mod Clase tests', () => {
