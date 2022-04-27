@@ -6,7 +6,7 @@
     "scripts": {
         "test": "mocha",
         "coverage": "nyc npm test && nyc report --reporter=lcov",
-        "start": "tsc-watch --onSuccess \"node dist/mod-pr-9/addMapReduce.js\"",
+        "start": "tsc-watch --onSuccess \"node dist/mod-pr-10/WatchApp.class.js\"",
         "doc": "typedoc"
     },
     "keywords": [],
@@ -30,7 +30,10 @@
         "typescript": "^4.6.3"
     },
     "dependencies": {
+        "@types/node": "^17.0.25",
+        "chalk": "^4.1.2",
         "enquirer": "^2.3.6",
-        "inquirer": "^8.2.1"
+        "inquirer": "^8.2.1",
+        "yargs": "^17.4.1"
     }
 }

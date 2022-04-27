@@ -1,8 +1,6 @@
 {
     "entryPoints": [
-        "./src/mod-pr-8/observable/observable.ts",
-        "./src/mod-pr-8/revista/revista.ts",
-        "./src/mod-pr-8/suscriptor/suscriptor.ts"
+        ""
     ],
     "out": "./type-docs"
 }
