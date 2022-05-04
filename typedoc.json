@@ -1,6 +1,8 @@
 {
     "entryPoints": [
-        ""
+        "./src/mod-pr-11/client.ts",
+        "./src/mod-pr-11/server.ts",
+        "./src/mod-pr-11/CommandEmitter.ts"
     ],
     "out": "./type-docs"
 }
