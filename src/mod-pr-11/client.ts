@@ -1,36 +1,25 @@
 import * as net from 'net';
-import * as chalk from 'chalk';
-import {CmdEventEmitter} from './CmdEventEmitter';
-// Comprobamos los argumentos de los comandos.
-if (process.argv.length < 3) {
-  console.log(chalk.red(`Filename??`));
+import {CommandEmitter} from './CommandEmitter';
+
+if (process.argv.length !== 3) {
+  console.log('Please, provide a filename.');
 } else {
   const command = process.argv[2];
-  // Conectamos el socket.
   const socket = net.connect({port: 60300});
-  // Conectamos el cliente.
-  const client = new CmdEventEmitter(socket);
-
+  const client = new CommandEmitter(socket);
   socket.write(command);
   socket.end();
-
   client.on('command', (message) => {
-
     if (message.type === 'connected') {
-      console.log(chalk.green(`Connected! -> command: ${command}`));
+      console.log(`Connection established: executing command ${command}`);
     } else if (message.type === 'success') {
-      console.log(chalk.green(`Result: ${message.msg}`));
+      console.log(`Result: ${message.msg}`);
     } else if (message.type === 'error') {
-      console.log(chalk.red(`Error: ${message.msg}`));
+      console.log(`Command error: ${message.msg}`);
     } else if (message.type === 'stderr') {
-      console.log(chalk.red(`Error with command: ${message.msg}`));
+      console.log(`Error executing the command: ${message.msg}`);
     } else {
-      console.log(chalk.red(`Error: ${message.type} unknown`));
+      console.log(`Message type ${message.type} is not valid`);
     }
   });
-
-  client.on('end', () => {
-    console.log('Connection ended.');
-    console.log(command);
-  })
 }

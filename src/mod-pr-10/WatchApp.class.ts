@@ -74,5 +74,3 @@ while (process.argv[i] != null) {
 console.log(command);
 const observer: WhatchApp = new WhatchApp(String(command), String(argv), String(filename));
 observer.watchDirectory();
-
-
