@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import {Athlete} from './models/interface';
+import {Athlete} from '../models/interface';
 
 mongoose.connect('mongodb://localhost:27017/athletes', {
   useNewUrlParser: true,
@@ -11,17 +11,10 @@ mongoose.connect('mongodb://localhost:27017/athletes', {
   console.log('Something went wrong when conecting to the database');
 });
 
-const athlete = new Athlete({
-  dni: '567',
-  nombre: 'Jeff',
-  apellidos: 'Perez',
-  edad: 23,
-  deporte: 'natacion',
-  marca: 20,
-});
-
-athlete.save().then((result) => {
+Athlete.findOneAndDelete({marca: 20}).then((result) => {
+  console.log(`Atleta Eliminado:`);
   console.log(result);
 }).catch((error) => {
+  console.log(`Ha ocurrido un error.`);
   console.log(error);
 });
